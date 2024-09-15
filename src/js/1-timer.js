@@ -2,20 +2,9 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
-function flatpickr(selector, options) {
-  const options = {
-      enableTime: true,
-      time_24hr: true,
-      defaultDate: new Date(),
-      minuteIncrement: 1,
-      onClose(selectedDates) {
-        console.log(selectedDates[0]);
-      },
-    }; 
-}
 
 const dateTimePicker = document.querySelector("#datetime-picker");
-const startButton = document.querySelector("data-start]");
+const startButton = document.querySelector("[data-start]");
 const daysValue = document.querySelector("[data-days]");
 const hoursValue = document.querySelector("[data-hours]");
 const minutesValue = document.querySelector("[data-minutes]");
@@ -52,6 +41,7 @@ function startCountdown() {
 
     if (timeRemaining <= 0) {
       clearInterval(timerId);
+      updateTimerInterface({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       return;
     }
 
@@ -82,6 +72,11 @@ function convertMs(ms) {
     const seconds = Math.floor((((ms % day) % hour) % minute) / second);
   
     return { days, hours, minutes, seconds };
+  }
+
+  function updateTimerInterface({ days, hours, minutes, seconds }) {
+    daysValue.textContent = string(days).padStart(2, '0');
+
   }
   
   console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
