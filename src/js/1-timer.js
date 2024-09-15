@@ -75,7 +75,10 @@ function convertMs(ms) {
   }
 
   function updateTimerInterface({ days, hours, minutes, seconds }) {
-    daysValue.textContent = string(days).padStart(2, '0');
+    daysValue.textContent = String(days).padStart(2, '0');
+    hoursValue.textContent = String(hours).padStart(2, '0');
+    minutesValue.textContent = String(minutes).padStart(2, '0');
+    secondsValue.textContent = String(seconds).padStart(2, '0');
 
   }
   
