@@ -1,0 +1,2 @@
+import"./assets/styles-B5Qt9EMX.js";document.querySelector("#promiseForm").addEventListener("submit",e=>{e.preventDefault();const t=e.currentTarget,r=parseInt(t.delay.value),o=t.state.value;i(r,o).then(s=>{showNotification(s,"success")}).cathc(s=>{showNotification(s,"error")})});function i(e,t){return new Promise((r,o)=>{setTimeout(()=>{t==="fulfilled"?r(`Promise fulfilled after ${e}ms`):o(`Promise rejected after ${e}ms`)})})}
+//# sourceMappingURL=2-snackbar.js.map
