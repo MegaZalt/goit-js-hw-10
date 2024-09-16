@@ -52,8 +52,14 @@ function startCountdown() {
 
 startButton.addEventListener("click", () => {
   startButton.disabled = true;
+  dateTimePicker.disabled = true;
   startCountdown();
 });
+
+function resetUI() {
+  startButton.disabled = true;
+  dateTimePicker.disabled = false;
+}
 
 function convertMs(ms) {
     // Number of milliseconds per unit of time
