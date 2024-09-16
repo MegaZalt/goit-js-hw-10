@@ -1,17 +1,20 @@
-document.querySelector('#promiseForm').addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    const delay = parseInt(form.delay.value);
-    const state = form.state.value;
-
-    createPromise(delay, state)
-    .then((message) => {
-        showNotification(message, "success");
-    })
-    .cath((error) => {
-        showNotification(error, "error");
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector('.form').addEventListener("submit", (event) => {
+        event.preventDefault();
+    
+        const form = event.currentTarget;
+        const delay = parseInt(form.delay.value);
+        const state = form.state.value;
+    
+        createPromise(delay, state)
+        .then((message) => {
+            showNotification(message, "success");
+        })
+        .catch((error) => {
+            showNotification(error, "error");
+        });
     });
+    
 });
 
 function createPromise(delay, state) {
