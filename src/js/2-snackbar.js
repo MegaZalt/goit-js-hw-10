@@ -9,7 +9,7 @@ document.querySelector('#promiseForm').addEventListener("submit", (event) => {
     .then((message) => {
         showNotification(message, "success");
     })
-    .cathc((error) => {
+    .cath((error) => {
         showNotification(error, "error");
     });
 });
@@ -22,6 +22,12 @@ function createPromise(delay, state) {
             } else {
                 reject(`Promise rejected after ${delay}ms`);
             }
-        })
-    })
+        }, delay);
+    });
+}
+
+function showNotification(message, type) {
+    const notificationDiv = document.getElementById("notification");
+    notificationDiv.textContent = message;
+    notificationDiv.className = type;
 }
