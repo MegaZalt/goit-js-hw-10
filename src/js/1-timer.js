@@ -42,6 +42,8 @@ function startCountdown() {
     if (timeRemaining <= 0) {
       clearInterval(timerId);
       updateTimerInterface({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      alert("Таймер завершено!");
+      resetUI();
       return;
     }
 
