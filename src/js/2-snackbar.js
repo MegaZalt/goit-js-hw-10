@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.form').addEventListener("submit", (event) => {
         event.preventDefault();
