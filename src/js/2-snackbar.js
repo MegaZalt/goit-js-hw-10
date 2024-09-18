@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const state = form.state.value;
     
         createPromise(delay, state)
-        .then((message) => {
-            showNotification(message, "success");
+        .then((delay) => {
+            showNotification(`✅ Fulfilled promise in ${delay}ms`, "success");
+            console.log(`✅ Fulfilled promise in ${delay}ms`);
         })
-        .catch((error) => {
-            showNotification(error, "error");
+        .catch((delay) => {
+            showNotification(`❌ Rejected promise in ${delay}ms`, "error");
+            console.log(❌ Rejected promise in ${delay}ms`);
         });
     });
     
