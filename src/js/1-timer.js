@@ -1,6 +1,7 @@
 
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import iziToast from "izitoast";
 
 
 const dateTimePicker = document.querySelector("#datetime-picker");
@@ -26,10 +27,17 @@ flatpickr("#datetime-picker", {
     userSelectedDate = selectedDates[0];
 
     if(userSelectedDate < new Date()) {
-      window.alert("Please choose a date in the future");
+      iziToast.error({
+        title: 'Error',
+        message: 'Please choose a date in the future',
+      });
       startButton.disabled = true;
     } else {
       startButton.disabled = false;
+      iziToast.success({
+        title: 'Success',
+        message: 'Date selected successfully',
+      });
     }
   }          
 });
