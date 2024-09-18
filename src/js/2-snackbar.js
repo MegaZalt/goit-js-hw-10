@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((delay) => {
             showNotification(`❌ Rejected promise in ${delay}ms`, "error");
-            console.log(❌ Rejected promise in ${delay}ms`);
+            console.log(`❌ Rejected promise in ${delay}ms`)
         });
     });
     
